@@ -9,6 +9,11 @@ on:
 env:
   GITHUB_CR_REPO: ghcr.io/${{ github.repository }}
 
+- name: Run API tests
+  env:
+    PYTHONPATH: ${{ github.workspace }}
+  run: pytest tests/API_tests --html=pytest-report.html --self-contained-html
+  
 jobs:
   # 🧪 1️⃣ Run Pytest before build
   test:
