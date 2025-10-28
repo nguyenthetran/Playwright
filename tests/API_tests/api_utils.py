@@ -1,0 +1,43 @@
+import requests
+from .config import BASE_URL, API_TOKEN
+
+BASE_URL1 = "https://uat-api-seller.amaze-x.com/catalog/api/v2"
+HEADERS = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlMVQ3dGdFekw5ZnBkdkh2dTZ2eHJRa016YW9hMjBfSjhiYWpXd1oxbEo0In0.eyJleHAiOjE3NjE2Mzk0NjcsImlhdCI6MTc2MTYyMTQ2NywianRpIjoiMTkxM2M3MjMtNGI5MC00YzdkLWJjMmItY2Y5NTY0Y2YyOGM5IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay51YXQtYXBpLXNlbGxlci5hbWF6ZS14LmNvbS9yZWFsbXMvYW1hemUtc2VsbGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImM2MDcyZDVhLWNkMWQtNDVkNi1hNTg5LTFhOGUwMzUxZDczNiIsInR5cCI6IkJlYXJlciIsImF6cCI6InNlbGxlci1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiYzYyZDVmZDktZjIyYi00ZDc1LWE2MTItYzVkZDYxZTQ4Mzg1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1hbWF6ZS1zZWxsZXIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBvZmZsaW5lX2FjY2VzcyBlbWFpbCIsInNpZCI6ImM2MmQ1ZmQ5LWYyMmItNGQ3NS1hNjEyLWM1ZGQ2MWU0ODM4NSIsInNob3BfaWQiOiIwY2FmMTQwZS0xNDNmLTRjMmItYTI2Mi1kYzMzODZlNjhlZjkiLCJ1c2VyX2FwcHJvdmVkIjoiZmFsc2UiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJ2b2YzcTJtbmNyY2VzbXogYTM2N3EwdHpxdHN2djBoIiwicGhvbmVfbnVtYmVyIjoiMDg0NjQ1NjEzNCIsInByZWZlcnJlZF91c2VybmFtZSI6InFjX3Rlc3RlciIsImdpdmVuX25hbWUiOiJ2b2YzcTJtbmNyY2VzbXoiLCJmYW1pbHlfbmFtZSI6ImEzNjdxMHR6cXRzdnYwaCIsInNob3BfYW1hemVfaWQiOiIyMjQ1NCIsImVtYWlsIjoicWMua2QudHJAZ21haWwuY29tIn0.m_6jYTErEA8iKm1VeFMb7gkAJVr6X0CqPg4qIpt6apJ2XYvNV84JBUqc6zz-tkJ1onxiS8udnglecJ85Lgm72n54_G_-F7rXYzAIMDVJ6xZLaP2PSd6HapxFzOJnOjELlI4Cg-vHD2DBZIX25fSJaU2PVjBDf3WbArerbhnUsAaNvi6E4_ztzPOs5ewVxw4JEkwHaOX7XDunkqyN--U-Xg-C_2Nv9oKfri8FAUF69vecDF05oWnFGsnp1Qif2NYWqPwmzx3DxelCnNtT30qyigH-lisiu4aaYsbdetZAZksZ0lriUAQNiw5_lt-lhmzHKNieF0aeVblAgN-AA3s79w",
+    "x-language-key": "en",
+    "x-shop-id": "0caf140e-143f-4c2b-a262-dc3386e68ef9",
+    "x-user-id": "c6072d5a-cd1d-45d6-a589-1a8e0351d736",
+    "accept": "application/json, text/plain, */*"
+}
+
+def create_product(payload):
+    url = f"{BASE_URL}/catalog/api/v3/product"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {API_TOKEN}"
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+    return response
+
+def get_product_list():
+    url = f"{BASE_URL1}/catalog/api/v2/product?page=1&promotion_detail=true&size=48&normal_price_history=true&price_off_history=true&list_type=all"
+    headers = {
+        "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlMVQ3dGdFekw5ZnBkdkh2dTZ2eHJRa016YW9hMjBfSjhiYWpXd1oxbEo0In0.eyJleHAiOjE3NjE2Mzk0NjcsImlhdCI6MTc2MTYyMTQ2NywianRpIjoiMTkxM2M3MjMtNGI5MC00YzdkLWJjMmItY2Y5NTY0Y2YyOGM5IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay51YXQtYXBpLXNlbGxlci5hbWF6ZS14LmNvbS9yZWFsbXMvYW1hemUtc2VsbGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImM2MDcyZDVhLWNkMWQtNDVkNi1hNTg5LTFhOGUwMzUxZDczNiIsInR5cCI6IkJlYXJlciIsImF6cCI6InNlbGxlci1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiYzYyZDVmZDktZjIyYi00ZDc1LWE2MTItYzVkZDYxZTQ4Mzg1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1hbWF6ZS1zZWxsZXIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBvZmZsaW5lX2FjY2VzcyBlbWFpbCIsInNpZCI6ImM2MmQ1ZmQ5LWYyMmItNGQ3NS1hNjEyLWM1ZGQ2MWU0ODM4NSIsInNob3BfaWQiOiIwY2FmMTQwZS0xNDNmLTRjMmItYTI2Mi1kYzMzODZlNjhlZjkiLCJ1c2VyX2FwcHJvdmVkIjoiZmFsc2UiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJ2b2YzcTJtbmNyY2VzbXogYTM2N3EwdHpxdHN2djBoIiwicGhvbmVfbnVtYmVyIjoiMDg0NjQ1NjEzNCIsInByZWZlcnJlZF91c2VybmFtZSI6InFjX3Rlc3RlciIsImdpdmVuX25hbWUiOiJ2b2YzcTJtbmNyY2VzbXoiLCJmYW1pbHlfbmFtZSI6ImEzNjdxMHR6cXRzdnYwaCIsInNob3BfYW1hemVfaWQiOiIyMjQ1NCIsImVtYWlsIjoicWMua2QudHJAZ21haWwuY29tIn0.m_6jYTErEA8iKm1VeFMb7gkAJVr6X0CqPg4qIpt6apJ2XYvNV84JBUqc6zz-tkJ1onxiS8udnglecJ85Lgm72n54_G_-F7rXYzAIMDVJ6xZLaP2PSd6HapxFzOJnOjELlI4Cg-vHD2DBZIX25fSJaU2PVjBDf3WbArerbhnUsAaNvi6E4_ztzPOs5ewVxw4JEkwHaOX7XDunkqyN--U-Xg-C_2Nv9oKfri8FAUF69vecDF05oWnFGsnp1Qif2NYWqPwmzx3DxelCnNtT30qyigH-lisiu4aaYsbdetZAZksZ0lriUAQNiw5_lt-lhmzHKNieF0aeVblAgN-AA3s79w",
+        "x-language-key": "en",
+        "x-shop-id": "0caf140e-143f-4c2b-a262-dc3386e68ef9",
+        "x-user-id": "c6072d5a-cd1d-45d6-a589-1a8e0351d736",
+    }
+    return requests.get(url, headers=headers)
+
+def get_product_by_id(product_id):
+    """Return the full product response by ID."""
+    for path in [f"/product/{product_id}", f"/product/detail/{product_id}"]:
+        url = f"{BASE_URL1}{path}"
+        resp = requests.get(url, headers=HEADERS)
+        print(f"➡️ Tried {url} -> {resp.status_code}")
+        if resp.status_code == 200:
+            return resp
+
+    return resp
