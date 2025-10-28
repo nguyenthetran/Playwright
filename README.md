@@ -151,4 +151,4 @@ TARGETPLATFORM=linux/arm64 docker compose up --build
 - [x] **2025/01/06:** Thanks to @richard-devbot. A New and Well-Designed WebUI is released. [Video tutorial demo](https://github.com/warmshao/browser-use-webui/issues/1#issuecomment-2573393113).
 
 
-#### Trigger CI/CD workflow6
+#### Trigger CI/CD workflow8
