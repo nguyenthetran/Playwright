@@ -18,6 +18,11 @@ jobs:
   test:
     name: Run API/Automation Tests
     runs-on: ubuntu-latest
+    permissions:
+      # Bắt buộc để tạo và ghi báo cáo kiểm thử vào commit
+      checks: write 
+      # Nếu bạn dùng actions/upload-artifact, bạn cũng cần contents: read
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
