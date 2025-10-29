@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="17" skipped="0" tests="25" time="74.724" timestamp="2025-10-29T15:09:52.169245+07:00" hostname="PC180134"><testcase classname="tests.API_tests.test_create_product" name="test_create_product_and_verify_product" time="14.478" /><testcase classname="tests.API_tests.test_create_product" name="test_create_product_missing_name" time="0.216" /><testcase classname="tests.API_tests.test_create_product" name="test_create_product_invalid_price" time="0.230" /><testcase classname="tests.API_tests.test_create_product" name="test_create_product_missing_category" time="0.232" /><testcase classname="tests.API_tests.test_create_product" name="test_create_product_no_image" time="0.277" /><testcase classname="tests.API_tests.test_create_product" name="test_create_product_zero_price" time="0.247" /><testcase classname="tests.API_tests.test_create_product" name="test_create_product_duplicate_name" time="0.437" /><testcase classname="tests.test_agents" name="test_browser_use_agent" time="0.001"><failure message="Failed: async def functions are not natively supported.&#10;You need to install a suitable plugin for your async framework, for example:&#10;  - anyio&#10;  - pytest-asyncio&#10;  - pytest-tornasync&#10;  - pytest-trio&#10;  - pytest-twisted">async def functions are not natively supported.
+You need to install a suitable plugin for your async framework, for example:
+  - anyio
+  - pytest-asyncio
+  - pytest-tornasync
+  - pytest-trio
+  - pytest-twisted</failure></testcase><testcase classname="tests.test_agents" name="test_browser_use_parallel" time="0.001"><failure message="Failed: async def functions are not natively supported.&#10;You need to install a suitable plugin for your async framework, for example:&#10;  - anyio&#10;  - pytest-asyncio&#10;  - pytest-tornasync&#10;  - pytest-trio&#10;  - pytest-twisted">async def functions are not natively supported.
+You need to install a suitable plugin for your async framework, for example:
+  - anyio
+  - pytest-asyncio
+  - pytest-tornasync
+  - pytest-trio
+  - pytest-twisted</failure></testcase><testcase classname="tests.test_agents" name="test_deep_research_agent" time="0.004"><failure message="Failed: async def functions are not natively supported.&#10;You need to install a suitable plugin for your async framework, for example:&#10;  - anyio&#10;  - pytest-asyncio&#10;  - pytest-tornasync&#10;  - pytest-trio&#10;  - pytest-twisted">async def functions are not natively supported.
+You need to install a suitable plugin for your async framework, for example:
+  - anyio
+  - pytest-asyncio
+  - pytest-tornasync
+  - pytest-trio
+  - pytest-twisted</failure></testcase><testcase classname="tests.test_controller" name="test_mcp_client" time="0.001"><failure message="Failed: async def functions are not natively supported.&#10;You need to install a suitable plugin for your async framework, for example:&#10;  - anyio&#10;  - pytest-asyncio&#10;  - pytest-tornasync&#10;  - pytest-trio&#10;  - pytest-twisted">async def functions are not natively supported.
+You need to install a suitable plugin for your async framework, for example:
+  - anyio
+  - pytest-asyncio
+  - pytest-tornasync
+  - pytest-trio
+  - pytest-twisted</failure></testcase><testcase classname="tests.test_controller" name="test_controller_with_mcp" time="0.001"><failure message="Failed: async def functions are not natively supported.&#10;You need to install a suitable plugin for your async framework, for example:&#10;  - anyio&#10;  - pytest-asyncio&#10;  - pytest-tornasync&#10;  - pytest-trio&#10;  - pytest-twisted">async def functions are not natively supported.
+You need to install a suitable plugin for your async framework, for example:
+  - anyio
+  - pytest-asyncio
+  - pytest-tornasync
+  - pytest-trio
+  - pytest-twisted</failure></testcase><testcase classname="tests.test_llm_api" name="test_llm" time="0.001"><error message="failed on setup with &quot;file C:\Users\Archer\Desktop\browser-use-web-ui\web-ui\tests\test_llm_api.py, line 55&#10;  def test_llm(config, query, image_path=None, system_message=None):&#10;E       fixture 'config' not found&#10;&gt;       available fixtures: anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, doctest_namespace, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory&#10;&gt;       use 'pytest --fixtures [testpath]' for help on them.&#10;&#10;C:\Users\Archer\Desktop\browser-use-web-ui\web-ui\tests\test_llm_api.py:55&quot;">file C:\Users\Archer\Desktop\browser-use-web-ui\web-ui\tests\test_llm_api.py, line 55
+  def test_llm(config, query, image_path=None, system_message=None):
+E       fixture 'config' not found
+&gt;       available fixtures: anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, doctest_namespace, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, monkeypatch, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+&gt;       use 'pytest --fixtures [testpath]' for help on them.
+
+C:\Users\Archer\Desktop\browser-use-web-ui\web-ui\tests\test_llm_api.py:55</error></testcase><testcase classname="tests.test_llm_api" name="test_openai_model" time="17.302"><failure message="ValueError: #x1F4A5 OpenAI API key not found! #x1F511 Please set the `OPENAI_API_KEY` environment variable or provide it in the UI.">def test_openai_model():
+        config = LLMConfig(provider="openai", model_name="gpt-4o")
+&gt;       test_llm(config, "Describe this image", "assets/examples/test.png")
+
+tests\test_llm_api.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'openai', kwargs = {'api_key': '', 'base_url': 'https://api.openai.com/v1', 'model_name': 'gpt-4o', 'temperature': 0.8}, env_var = 'OPENAI_API_KEY', api_key = ''
+provider_display = 'OpenAI', error_msg = '#x1F4A5 OpenAI API key not found! #x1F511 Please set the `OPENAI_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 OpenAI API key not found! #x1F511 Please set the `OPENAI_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_llm_api" name="test_google_model" time="0.001"><failure message="ValueError: #x1F4A5 Google API key not found! #x1F511 Please set the `GOOGLE_API_KEY` environment variable or provide it in the UI.">def test_google_model():
+        # Enable your API key first if you haven't: https://ai.google.dev/palm_docs/oauth_quickstart
+        config = LLMConfig(provider="google", model_name="gemini-2.0-flash-exp")
+&gt;       test_llm(config, "Describe this image", "assets/examples/test.png")
+
+tests\test_llm_api.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'google', kwargs = {'api_key': '', 'base_url': '', 'model_name': 'gemini-2.0-flash-exp', 'temperature': 0.8}, env_var = 'GOOGLE_API_KEY', api_key = ''
+provider_display = 'Google', error_msg = '#x1F4A5 Google API key not found! #x1F511 Please set the `GOOGLE_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 Google API key not found! #x1F511 Please set the `GOOGLE_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_llm_api" name="test_azure_openai_model" time="0.001"><failure message="ValueError: #x1F4A5 Azure OpenAI API key not found! #x1F511 Please set the `AZURE_OPENAI_API_KEY` environment variable or provide it in the UI.">def test_azure_openai_model():
+        config = LLMConfig(provider="azure_openai", model_name="gpt-4o")
+&gt;       test_llm(config, "Describe this image", "assets/examples/test.png")
+
+tests\test_llm_api.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'azure_openai', kwargs = {'api_key': '', 'base_url': '', 'model_name': 'gpt-4o', 'temperature': 0.8}, env_var = 'AZURE_OPENAI_API_KEY', api_key = ''
+provider_display = 'Azure OpenAI', error_msg = '#x1F4A5 Azure OpenAI API key not found! #x1F511 Please set the `AZURE_OPENAI_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 Azure OpenAI API key not found! #x1F511 Please set the `AZURE_OPENAI_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_llm_api" name="test_deepseek_model" time="0.001"><failure message="ValueError: #x1F4A5 DeepSeek API key not found! #x1F511 Please set the `DEEPSEEK_API_KEY` environment variable or provide it in the UI.">def test_deepseek_model():
+        config = LLMConfig(provider="deepseek", model_name="deepseek-chat")
+&gt;       test_llm(config, "Who are you?")
+
+tests\test_llm_api.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'deepseek', kwargs = {'api_key': '', 'base_url': 'https://api.deepseek.com', 'model_name': 'deepseek-chat', 'temperature': 0.8}, env_var = 'DEEPSEEK_API_KEY'
+api_key = '', provider_display = 'DeepSeek', error_msg = '#x1F4A5 DeepSeek API key not found! #x1F511 Please set the `DEEPSEEK_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 DeepSeek API key not found! #x1F511 Please set the `DEEPSEEK_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_llm_api" name="test_deepseek_r1_model" time="0.001"><failure message="ValueError: #x1F4A5 DeepSeek API key not found! #x1F511 Please set the `DEEPSEEK_API_KEY` environment variable or provide it in the UI.">def test_deepseek_r1_model():
+        config = LLMConfig(provider="deepseek", model_name="deepseek-reasoner")
+&gt;       test_llm(config, "Which is greater, 9.11 or 9.8?", system_message="You are a helpful AI assistant.")
+
+tests\test_llm_api.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'deepseek', kwargs = {'api_key': '', 'base_url': 'https://api.deepseek.com', 'model_name': 'deepseek-reasoner', 'temperature': 0.8}, env_var = 'DEEPSEEK_API_KEY'
+api_key = '', provider_display = 'DeepSeek', error_msg = '#x1F4A5 DeepSeek API key not found! #x1F511 Please set the `DEEPSEEK_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 DeepSeek API key not found! #x1F511 Please set the `DEEPSEEK_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_llm_api" name="test_ollama_model" time="2.259"><failure message="httpx.ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it">@contextlib.contextmanager
+    def map_httpcore_exceptions() -&gt; typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+&gt;           yield
+
+.venv\Lib\site-packages\httpx\_transports\default.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\httpx\_transports\default.py:250: in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpcore\_sync\connection_pool.py:256: in handle_request
+    raise exc from None
+.venv\Lib\site-packages\httpcore\_sync\connection_pool.py:236: in handle_request
+    response = connection.handle_request(
+.venv\Lib\site-packages\httpcore\_sync\connection.py:101: in handle_request
+    raise exc
+.venv\Lib\site-packages\httpcore\_sync\connection.py:78: in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpcore\_sync\connection.py:124: in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpcore\_backends\sync.py:207: in connect_tcp
+    with map_exceptions(exc_map):
+..\..\..\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\Lib\contextlib.py:158: in __exit__
+    self.gen.throw(typ, value, traceback)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+map = {&lt;class 'TimeoutError'&gt;: &lt;class 'httpcore.ConnectTimeout'&gt;, &lt;class 'OSError'&gt;: &lt;class 'httpcore.ConnectError'&gt;}
+
+    @contextlib.contextmanager
+    def map_exceptions(map: ExceptionMapping) -&gt; typing.Iterator[None]:
+        try:
+            yield
+        except Exception as exc:  # noqa: PIE786
+            for from_exc, to_exc in map.items():
+                if isinstance(exc, from_exc):
+&gt;                   raise to_exc(exc) from exc
+E                   httpcore.ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+.venv\Lib\site-packages\httpcore\_exceptions.py:14: ConnectError
+
+The above exception was the direct cause of the following exception:
+
+    def test_ollama_model():
+        config = LLMConfig(provider="ollama", model_name="qwen2.5:7b")
+&gt;       test_llm(config, "Sing a ballad of LangChain.")
+
+tests\test_llm_api.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:66: in test_llm
+    ai_msg = llm.invoke(query)
+             ^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\langchain_core\language_models\chat_models.py:307: in invoke
+    self.generate_prompt(
+.venv\Lib\site-packages\langchain_core\language_models\chat_models.py:843: in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\langchain_core\language_models\chat_models.py:683: in generate
+    self._generate_with_cache(
+.venv\Lib\site-packages\langchain_core\language_models\chat_models.py:908: in _generate_with_cache
+    result = self._generate(
+.venv\Lib\site-packages\langchain_ollama\chat_models.py:705: in _generate
+    final_chunk = self._chat_stream_with_aggregation(
+.venv\Lib\site-packages\langchain_ollama\chat_models.py:642: in _chat_stream_with_aggregation
+    for chunk in self._iterate_over_stream(messages, stop, **kwargs):
+.venv\Lib\site-packages\langchain_ollama\chat_models.py:727: in _iterate_over_stream
+    for stream_resp in self._create_chat_stream(messages, stop, **kwargs):
+.venv\Lib\site-packages\langchain_ollama\chat_models.py:629: in _create_chat_stream
+    yield from self._client.chat(**chat_params)
+.venv\Lib\site-packages\ollama\_client.py:174: in inner
+    with self._client.stream(*args, **kwargs) as r:
+..\..\..\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:868: in stream
+    response = self.send(
+.venv\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+.venv\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+.venv\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_transports\default.py:249: in handle_request
+    with map_httpcore_exceptions():
+..\..\..\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\Lib\contextlib.py:158: in __exit__
+    self.gen.throw(typ, value, traceback)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -&gt; typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+            yield
+        except Exception as exc:
+            mapped_exc = None
+    
+            for from_exc, to_exc in HTTPCORE_EXC_MAP.items():
+                if not isinstance(exc, from_exc):
+                    continue
+                # We want to map to the most specific exception we can find.
+                # Eg if `exc` is an `httpcore.ReadTimeout`, we want to map to
+                # `httpx.ReadTimeout`, not just `httpx.TimeoutException`.
+                if mapped_exc is None or issubclass(to_exc, mapped_exc):
+                    mapped_exc = to_exc
+    
+            if mapped_exc is None:  # pragma: no cover
+                raise
+    
+            message = str(exc)
+&gt;           raise mapped_exc(message) from exc
+E           httpx.ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+.venv\Lib\site-packages\httpx\_transports\default.py:118: ConnectError</failure></testcase><testcase classname="tests.test_llm_api" name="test_deepseek_r1_ollama_model" time="2.101"><failure message="httpx.ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it">@contextlib.contextmanager
+    def map_httpcore_exceptions() -&gt; typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+&gt;           yield
+
+.venv\Lib\site-packages\httpx\_transports\default.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\httpx\_transports\default.py:250: in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpcore\_sync\connection_pool.py:256: in handle_request
+    raise exc from None
+.venv\Lib\site-packages\httpcore\_sync\connection_pool.py:236: in handle_request
+    response = connection.handle_request(
+.venv\Lib\site-packages\httpcore\_sync\connection.py:101: in handle_request
+    raise exc
+.venv\Lib\site-packages\httpcore\_sync\connection.py:78: in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpcore\_sync\connection.py:124: in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpcore\_backends\sync.py:207: in connect_tcp
+    with map_exceptions(exc_map):
+..\..\..\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\Lib\contextlib.py:158: in __exit__
+    self.gen.throw(typ, value, traceback)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+map = {&lt;class 'TimeoutError'&gt;: &lt;class 'httpcore.ConnectTimeout'&gt;, &lt;class 'OSError'&gt;: &lt;class 'httpcore.ConnectError'&gt;}
+
+    @contextlib.contextmanager
+    def map_exceptions(map: ExceptionMapping) -&gt; typing.Iterator[None]:
+        try:
+            yield
+        except Exception as exc:  # noqa: PIE786
+            for from_exc, to_exc in map.items():
+                if isinstance(exc, from_exc):
+&gt;                   raise to_exc(exc) from exc
+E                   httpcore.ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+.venv\Lib\site-packages\httpcore\_exceptions.py:14: ConnectError
+
+The above exception was the direct cause of the following exception:
+
+    def test_deepseek_r1_ollama_model():
+        config = LLMConfig(provider="ollama", model_name="deepseek-r1:14b")
+&gt;       test_llm(config, "How many 'r's are in the word 'strawberry'?")
+
+tests\test_llm_api.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:66: in test_llm
+    ai_msg = llm.invoke(query)
+             ^^^^^^^^^^^^^^^^^
+src\utils\llm_provider.py:143: in invoke
+    org_ai_message = super().invoke(input=input)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\langchain_core\language_models\chat_models.py:307: in invoke
+    self.generate_prompt(
+.venv\Lib\site-packages\langchain_core\language_models\chat_models.py:843: in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\langchain_core\language_models\chat_models.py:683: in generate
+    self._generate_with_cache(
+.venv\Lib\site-packages\langchain_core\language_models\chat_models.py:908: in _generate_with_cache
+    result = self._generate(
+.venv\Lib\site-packages\langchain_ollama\chat_models.py:705: in _generate
+    final_chunk = self._chat_stream_with_aggregation(
+.venv\Lib\site-packages\langchain_ollama\chat_models.py:642: in _chat_stream_with_aggregation
+    for chunk in self._iterate_over_stream(messages, stop, **kwargs):
+.venv\Lib\site-packages\langchain_ollama\chat_models.py:727: in _iterate_over_stream
+    for stream_resp in self._create_chat_stream(messages, stop, **kwargs):
+.venv\Lib\site-packages\langchain_ollama\chat_models.py:629: in _create_chat_stream
+    yield from self._client.chat(**chat_params)
+.venv\Lib\site-packages\ollama\_client.py:174: in inner
+    with self._client.stream(*args, **kwargs) as r:
+..\..\..\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\Lib\contextlib.py:137: in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:868: in stream
+    response = self.send(
+.venv\Lib\site-packages\httpx\_client.py:914: in send
+    response = self._send_handling_auth(
+.venv\Lib\site-packages\httpx\_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+.venv\Lib\site-packages\httpx\_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\httpx\_transports\default.py:249: in handle_request
+    with map_httpcore_exceptions():
+..\..\..\AppData\Roaming\uv\python\cpython-3.11.14-windows-x86_64-none\Lib\contextlib.py:158: in __exit__
+    self.gen.throw(typ, value, traceback)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    @contextlib.contextmanager
+    def map_httpcore_exceptions() -&gt; typing.Iterator[None]:
+        global HTTPCORE_EXC_MAP
+        if len(HTTPCORE_EXC_MAP) == 0:
+            HTTPCORE_EXC_MAP = _load_httpcore_exceptions()
+        try:
+            yield
+        except Exception as exc:
+            mapped_exc = None
+    
+            for from_exc, to_exc in HTTPCORE_EXC_MAP.items():
+                if not isinstance(exc, from_exc):
+                    continue
+                # We want to map to the most specific exception we can find.
+                # Eg if `exc` is an `httpcore.ReadTimeout`, we want to map to
+                # `httpx.ReadTimeout`, not just `httpx.TimeoutException`.
+                if mapped_exc is None or issubclass(to_exc, mapped_exc):
+                    mapped_exc = to_exc
+    
+            if mapped_exc is None:  # pragma: no cover
+                raise
+    
+            message = str(exc)
+&gt;           raise mapped_exc(message) from exc
+E           httpx.ConnectError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+.venv\Lib\site-packages\httpx\_transports\default.py:118: ConnectError</failure></testcase><testcase classname="tests.test_llm_api" name="test_mistral_model" time="0.001"><failure message="ValueError: #x1F4A5 MISTRAL API key not found! #x1F511 Please set the `MISTRAL_API_KEY` environment variable or provide it in the UI.">def test_mistral_model():
+        config = LLMConfig(provider="mistral", model_name="pixtral-large-latest")
+&gt;       test_llm(config, "Describe this image", "assets/examples/test.png")
+
+tests\test_llm_api.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'mistral', kwargs = {'api_key': '', 'base_url': 'https://api.mistral.ai/v1', 'model_name': 'pixtral-large-latest', 'temperature': 0.8}, env_var = 'MISTRAL_API_KEY'
+api_key = '', provider_display = 'MISTRAL', error_msg = '#x1F4A5 MISTRAL API key not found! #x1F511 Please set the `MISTRAL_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 MISTRAL API key not found! #x1F511 Please set the `MISTRAL_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_llm_api" name="test_moonshot_model" time="0.001"><failure message="ValueError: #x1F4A5 MoonShot API key not found! #x1F511 Please set the `MOONSHOT_API_KEY` environment variable or provide it in the UI.">def test_moonshot_model():
+        config = LLMConfig(provider="moonshot", model_name="moonshot-v1-32k-vision-preview")
+&gt;       test_llm(config, "Describe this image", "assets/examples/test.png")
+
+tests\test_llm_api.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'moonshot', kwargs = {'api_key': '', 'base_url': 'https://api.moonshot.cn/v1', 'model_name': 'moonshot-v1-32k-vision-preview', 'temperature': 0.8}
+env_var = 'MOONSHOT_API_KEY', api_key = '', provider_display = 'MoonShot'
+error_msg = '#x1F4A5 MoonShot API key not found! #x1F511 Please set the `MOONSHOT_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 MoonShot API key not found! #x1F511 Please set the `MOONSHOT_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_llm_api" name="test_ibm_model" time="0.001"><failure message="ValueError: #x1F4A5 IBM API key not found! #x1F511 Please set the `IBM_API_KEY` environment variable or provide it in the UI.">def test_ibm_model():
+        config = LLMConfig(provider="ibm", model_name="meta-llama/llama-4-maverick-17b-128e-instruct-fp8")
+&gt;       test_llm(config, "Describe this image", "assets/examples/test.png")
+
+tests\test_llm_api.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'ibm'
+kwargs = {'api_key': '', 'base_url': 'https://us-south.ml.cloud.ibm.com', 'model_name': 'meta-llama/llama-4-maverick-17b-128e-instruct-fp8', 'temperature': 0.8}
+env_var = 'IBM_API_KEY', api_key = '', provider_display = 'IBM'
+error_msg = '#x1F4A5 IBM API key not found! #x1F511 Please set the `IBM_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 IBM API key not found! #x1F511 Please set the `IBM_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_llm_api" name="test_qwen_model" time="0.001"><failure message="ValueError: #x1F4A5 Alibaba API key not found! #x1F511 Please set the `ALIBABA_API_KEY` environment variable or provide it in the UI.">def test_qwen_model():
+        config = LLMConfig(provider="alibaba", model_name="qwen-vl-max")
+&gt;       test_llm(config, "How many 'r's are in the word 'strawberry'?")
+
+tests\test_llm_api.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_llm_api.py:73: in test_llm
+    llm = llm_provider.get_llm_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+provider = 'alibaba', kwargs = {'api_key': '', 'base_url': 'https://dashscope.aliyuncs.com/compatible-mode/v1', 'model_name': 'qwen-vl-max', 'temperature': 0.8}
+env_var = 'ALIBABA_API_KEY', api_key = '', provider_display = 'Alibaba'
+error_msg = '#x1F4A5 Alibaba API key not found! #x1F511 Please set the `ALIBABA_API_KEY` environment variable or provide it in the UI.'
+
+    def get_llm_model(provider: str, **kwargs):
+        """
+        Get LLM model
+        :param provider: LLM provider
+        :param kwargs:
+        :return:
+        """
+        if provider not in ["ollama", "bedrock"]:
+            env_var = f"{provider.upper()}_API_KEY"
+            api_key = kwargs.get("api_key", "") or os.getenv(env_var, "")
+            if not api_key:
+                provider_display = config.PROVIDER_DISPLAY_NAMES.get(provider, provider.upper())
+                error_msg = f"#x1F4A5 {provider_display} API key not found! #x1F511 Please set the `{env_var}` environment variable or provide it in the UI."
+&gt;               raise ValueError(error_msg)
+E               ValueError: #x1F4A5 Alibaba API key not found! #x1F511 Please set the `ALIBABA_API_KEY` environment variable or provide it in the UI.
+
+src\utils\llm_provider.py:165: ValueError</failure></testcase><testcase classname="tests.test_playwright" name="test_connect_browser" time="3.635"><failure message="playwright._impl._errors.Error: BrowserType.launch_persistent_context: Failed to launch: Error: spawn . ENOENT&#10;Call log:&#10;  - &lt;launching&gt; . --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --no-sandbox --user-data-dir=C:\Users\Archer\AppData\Local\Temp\playwright_chromiumdev_profile-RpY7My --remote-debugging-pipe about:blank&#10;  - [pid=N/A] starting temporary directories cleanup&#10;  - [pid=N/A] finished temporary directories cleanup">def test_connect_browser():
+        import os
+        from playwright.sync_api import sync_playwright
+    
+        chrome_exe = os.getenv("CHROME_PATH", "")
+        chrome_use_data = os.getenv("CHROME_USER_DATA", "")
+    
+        with sync_playwright() as p:
+&gt;           browser = p.chromium.launch_persistent_context(
+                user_data_dir=chrome_use_data,
+                executable_path=chrome_exe,
+                headless=False  # Keep browser window visible
+            )
+
+tests\test_playwright.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\playwright\sync_api\_generated.py:14804: in launch_persistent_context
+    self._sync(
+.venv\Lib\site-packages\playwright\_impl\_browser_type.py:166: in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+.venv\Lib\site-packages\playwright\_impl\_connection.py:83: in send_return_as_dict
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;playwright._impl._connection.Connection object at 0x0000027FBAD55550&gt;, cb = &lt;function Channel.send_return_as_dict.&lt;locals&gt;.&lt;lambda&gt; at 0x0000027FBB5C1940&gt;
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -&gt; Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, "__pw_stack__", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+&gt;           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.Error: BrowserType.launch_persistent_context: Failed to launch: Error: spawn . ENOENT
+E           Call log:
+E             - &lt;launching&gt; . --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --no-sandbox --user-data-dir=C:\Users\Archer\AppData\Local\Temp\playwright_chromiumdev_profile-RpY7My --remote-debugging-pipe about:blank
+E             - [pid=N/A] starting temporary directories cleanup
+E             - [pid=N/A] finished temporary directories cleanup
+
+.venv\Lib\site-packages\playwright\_impl\_connection.py:558: Error</failure></testcase></testsuite></testsuites>

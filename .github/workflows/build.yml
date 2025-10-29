@@ -32,15 +32,25 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install pytest pytest-html requests
 
-      - name: Run pytest
+      - name: Run Pytest and Generate JUnit XML
         env:
           PYTHONPATH: ${{ github.workspace }}
-        run: pytest tests/API_tests --html=pytest-report.html --self-contained-html
+        run: |
+          pytest tests/API_tests --junitxml=pytest-results.xml --html=pytest-report.html --self-contained-html
 
-      - name: Upload pytest report
+      - name: Publish Test Results to GitHub UI
+        # 'if: always()' đảm bảo báo cáo được tạo dù test có lỗi
+        if: always() 
+        uses: dorny/test-reporter@v1 # Action phổ biến để đọc JUnit XML
+        with:
+          name: API Test Report # Tên sẽ hiển thị trên GitHub Test Summary
+          path: pytest-results.xml # Sử dụng file XML đã tạo ở trên
+          reporter: junit
+
+      - name: Upload HTML report (Visual)
         uses: actions/upload-artifact@v4
         with:
-          name: pytest-report
+          name: pytest-html-report
           path: pytest-report.html
 
   # 🧱 2️⃣ Build Docker Image (only if test passes)
