@@ -7,7 +7,6 @@ on:
     types: [published]
 
 env:
-  # 🔧 GHCR repo name luôn viết thường
   GITHUB_CR_REPO: ghcr.io/nguyenthetran/playwright
 
 permissions:
@@ -36,8 +35,7 @@ jobs:
       - name: Run pytest
         env:
           PYTHONPATH: ${{ github.workspace }}
-        run: |
-          pytest tests/API_tests --html=pytest-report.html --self-contained-html
+        run: pytest tests/API_tests --html=pytest-report.html --self-contained-html
 
       - name: Upload pytest report
         uses: actions/upload-artifact@v4
@@ -89,11 +87,25 @@ jobs:
         id: build
         uses: docker/build-push-action@v6
         with:
-          platforms: ${{ matrix.platform }}
           context: .
+          platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ env.GITHUB_CR_REPO }}:latest
-          push: true
+          outputs: type=image,push-by-digest=true,name=${{ env.GITHUB_CR_REPO }},push=true
+
+      - name: Export digest
+        run: |
+          mkdir -p ${{ runner.temp }}/digests
+          digest="${{ steps.build.outputs.digest }}"
+          echo "Digest: $digest"
+          touch "${{ runner.temp }}/digests/${digest#sha256:}"
+
+      - name: Upload digest
+        uses: actions/upload-artifact@v4
+        with:
+          name: digests-${{ env.PLATFORM_PAIR }}
+          path: ${{ runner.temp }}/digests/*
+          if-no-files-found: error
+          retention-days: 1
 
   # 🔁 3️⃣ Merge manifests (final image)
   merge:
@@ -130,9 +142,10 @@ jobs:
       - name: Create manifest list and push
         working-directory: ${{ runner.temp }}/digests
         run: |
+          echo "Merging digests in $(pwd):"
+          ls -la
           docker buildx imagetools create -t ${{ env.GITHUB_CR_REPO }}:latest \
             $(printf '${{ env.GITHUB_CR_REPO }}@sha256:%s ' *)
 
       - name: Inspect image
-        run: |
-          docker buildx imagetools inspect ${{ env.GITHUB_CR_REPO }}:latest
+        run: docker buildx imagetools inspect ${{ env.GITHUB_CR_REPO }}:latest
