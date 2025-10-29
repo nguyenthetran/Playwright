@@ -13,7 +13,7 @@ def product_payload():
     return base_product_payload()
 
 def test_create_product_and_verify_product(product_payload):
-    product_name = "Demo Verify Product"
+    product_name = "Product name test ne"
     product_payload["name"] = product_name
 
     # Step 1️⃣ - Tạo product
@@ -42,7 +42,6 @@ def test_create_product_and_verify_product(product_payload):
 
     assert found, f"❌ Product '{product_name}' (ID: {created_id}) not found after retries."
 
-'''
 def test_create_product_missing_name(product_payload):
     product_payload.pop("name", None)
     response = create_product(product_payload)
@@ -76,10 +75,9 @@ def test_create_product_zero_price(product_payload):
         print("❌ Zero price rejected as expected")
 
 def test_create_product_duplicate_name(product_payload):
-    product_payload["name"] = "Demo Success Product 1"  # giống case đầu tiên
+    product_payload["name"] = "Product name test ne"  # giống case đầu tiên
     response = create_product(product_payload)
     if response.status_code == 409:
         print("✅ Duplicate product name rejected")
     else:
         print("⚠️ API allowed duplicate product name")
-'''
