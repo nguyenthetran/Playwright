@@ -2,6 +2,7 @@ from itertools import product
 import pytest
 import json
 import time
+import requests
 from tests.API_tests.api_utils import create_product
 from tests.API_tests.api_utils import get_product_list, get_product_by_id
 from tests.API_tests.payloads import base_product_payload
@@ -18,8 +19,13 @@ def test_create_product_and_verify_product(product_payload):
 
     # Step 1️⃣ - Tạo product
     create_resp = create_product(product_payload)
-    assert create_resp.status_code in [200, 201], f"❌ Product creation failed: {create_resp.text}"
 
+    # 🌟 ĐO TIME LƯỜNG TẠO SẢN PHẨM Ở ĐÂY
+    creation_duration = create_resp.elapsed.total_seconds() 
+    print(f"⏱️ Creation API Load Time: {creation_duration:.3f} seconds")
+
+
+    assert create_resp.status_code in [200, 201], f"❌ Product creation failed: {create_resp.text}"
     created_data = create_resp.json().get("data", {})
     created_id = created_data.get("id")
     assert created_id, "❌ No product ID returned from create API"
@@ -30,14 +36,25 @@ def test_create_product_and_verify_product(product_payload):
     time.sleep(10)
     found = False
 
-    for _ in range(10):
+    start_time_polling = time.time() # BẮT ĐẦU ĐO TỔNG THỜI GIAN POLLING
+
+    for i in range(10):
         time.sleep(3)
         get_resp = get_product_by_id(created_id)
+
+        # 🌟 THÊM ĐO LƯỜNG TẢI TRÊN MỖI LẦN GET
+        get_duration = get_resp.elapsed.total_seconds()
+        print(f"   -> [Attempt {i+1}] GET Load Time: {get_duration:.3f}s")
+
         if get_resp.status_code == 200:
             data = get_resp.json().get("data", {})
             if data.get("id") == created_id:
                 found = True
+                end_time_polling = time.time() # KẾT THÚC ĐO TỔNG THỜI GIAN
+                total_polling_duration = end_time_polling - start_time_polling
+
                 print(f"✅ Product verified successfully in system (ID: {created_id})")
+                print(f"⏱️ Total Verification Duration: {total_polling_duration:.3f} seconds")
                 break
 
     assert found, f"❌ Product '{product_name}' (ID: {created_id}) not found after retries."

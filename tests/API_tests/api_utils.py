@@ -36,7 +36,11 @@ def get_product_by_id(product_id):
     for path in [f"/product/{product_id}", f"/product/detail/{product_id}"]:
         url = f"{BASE_URL1}{path}"
         resp = requests.get(url, headers=HEADERS)
-        print(f"➡️ Tried {url} -> {resp.status_code}")
+        # 🌟 ĐO VÀ IN RA LOAD TIME
+        load_time = resp.elapsed.total_seconds()
+        
+        print(f"➡️ Tried {url} -> {resp.status_code} in {load_time:.3f}s")
+
         if resp.status_code == 200:
             return resp
 
