@@ -159,4 +159,4 @@ TARGETPLATFORM=linux/arm64 docker compose up --build
 ### git push origin main  
 ###
 ### xuất report
-### pytest tests/API_tests/test_create_product.py --junitxml=api_report.xml
+### pytest tests/API_tests/test_create_product.py --junitxml=api_report.xml.
