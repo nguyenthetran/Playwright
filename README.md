@@ -152,3 +152,11 @@ TARGETPLATFORM=linux/arm64 docker compose up --build
 
 
 #### Trigger CI/CD workflow9
+### đẩy lên github
+### git add .
+### git status
+### git commit -m "Test CI/CD5" 
+### git push origin main  
+###
+### xuất report
+### pytest tests/API_tests/test_create_product.py --junitxml=api_report.xml
