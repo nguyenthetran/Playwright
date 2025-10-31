@@ -61,49 +61,7 @@ agent = Agent( task='''
                 Click the 'EN' option. 
                 Login with username and password: 'qc_tester' and 'Test@1234' 
                 Click the 'Sign In' button. 
-                Wait for the 'Welcome to Amaze Seller Center' text to appear.
-                Click the gear icon (Settings) immediately to the right of the search box.
-                Wait for the 'Use Media Center' toggle switch to be visible.
-                Click the toggle switch next to 'Use Media Center' to turn it ON.
-                Verify that the toggle switch next to 'Use Media Center' is ON.
-                Wait for 1 seconds.
-                Click the close icon (X) to dismiss the settings panel.
-                Click Create Products.
-                Click the 'Add Image (0/9)' button.
-                Click the 'From Media Center' button.
-                Await for the "Upload from Media Center" text to apppear.
-                Search the 'Amaze.png' on 'Name' field.
-                Click the 'Apply' button.
-                Click the checkbox above the image named 'Amaze.png'.
-                Click the 'Confirm' button.
-                Type 'Test auto with Playwright' into the 'Product Name' input field.
-                Type 'Test auto with Playwright' into the 'Product Name -TH' input field.
-                Click the "Category" field.
-                Await for the "Edit Category" text to apppear.
-                Click the 'Fashion' category item in the first column.
-                Click the 'Watches' category item in the second column.
-                Click the 'Men Watches' category item in the third column.
-                Click the 'OK' button to confirm the selection.
-                Scroll down the panel containing the 'Product Description -TH' fields until the bottom is visible.
-                Type 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.' into the 'Product Description' input field.
-                Type 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.' into the 'Product Description -TH' input field.
-                Scroll down the page until the 'Specification' field is visible.
-                Click the 'Brand' input field.
-                Click the 'Alba (อัลบา)' brand option.
-                Click the 'Watch style' input field.
-                Click the 'work' Watch style option.
-                Scroll down the page until the 'Sales information' field is visible.
-                Type '10' into the 'Original Price' input field.
-                Type '10' into the 'Stock' input field.
-                Click the "Warehouse" field.
-                Click 'test' Warehouse option.
-                Scroll down the page until the 'Shipping' field is visible.
-                Type '50' into the 'Weight' input field.
-                Type '20' into the 'W (Integer)' parcel size field.
-                Type '30' into the 'L (Integer)' parcel size field.
-                Type '15' into the 'H (Integer)' parcel size field.
-                Click 'Submit' button.
-                Await create product successfully.
+                Verify the login sucessfully
             ''',
     llm=llm,
     browser_context=browser_context
