@@ -37,9 +37,8 @@ async def run(playwright: Playwright) -> None:
         # (Giữ nguyên locator gốc của bạn)
     
 
-        await page.locator(
-            'input[type="file"][accept*=".jpeg"], input[type="file"][accept*=".jpg"], input[type="file"][accept*=".png"]'
-        ).set_input_files("./5783930.jpg")
+        file_path = os.path.join(os.path.dirname(__file__), "5783930.jpg")
+        await page.locator('input[type="file"][accept*=".jpeg"], input[type="file"][accept*=".jpg"], input[type="file"][accept*=".png"]').set_input_files(file_path)
 
         await page.get_by_role("textbox", name="* Product Name", exact=True).click()
         await page.get_by_role("textbox", name="* Product Name", exact=True).fill("Testing automation 1 ")
@@ -110,6 +109,7 @@ async def run(playwright: Playwright) -> None:
         # Đóng context để video được ghi ra file trong thư mục video01
         await context.close()
         await browser.close()
+
 
 
 async def main():

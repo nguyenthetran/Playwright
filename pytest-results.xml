@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="30.452" timestamp="2025-10-31T11:38:07.794077+07:00" hostname="DESKTOP-9TSHUN9"><testcase classname="P.test_create_product" name="test_create_product" time="30.231"><failure message="playwright._impl._errors.TimeoutError: Timeout 20000ms exceeded.&#10;=========================== logs ===========================&#10;waiting for navigation to &quot;**/portal/product/list?status=all&quot; until 'load'&#10;============================================================">@pytest.mark.asyncio
+    async def test_create_product():
+        os.makedirs("video01", exist_ok=True)
+    
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=False)
+    
+            context = await browser.new_context(
+                record_video_dir="videos",
+                record_video_size={"width": 1280, "height": 720},
+            )
+    
+            page = await context.new_page()
+    
+            try:
+                await page.goto(URL)
+    
+                await page.locator("span").filter(has_text="ThaiLanTH").click()
+                await page.get_by_text("United StatesEN").click()
+    
+                await page.get_by_role("textbox", name="Email/Phone Number/Username").fill("Accountuat44")
+                await page.get_by_role("textbox", name="Password").fill("xlNuHa031f0BIQL")
+                await page.get_by_role("button", name="Sign In").click()
+    
+                await page.get_by_text("Create Products").click()
+    
+                file_path = os.path.join(os.path.dirname(__file__), "5783930.jpg")
+                await page.locator('input[type="file"][accept*=".jpeg"], input[type="file"][accept*=".jpg"], input[type="file"][accept*=".png"]').set_input_files(file_path)
+    
+    
+                await page.get_by_role("textbox", name="* Product Name", exact=True).fill("Testing automation 1 ")
+                await page.get_by_role("textbox", name="* Product Name -TH").fill("Testing automation")
+    
+                await page.get_by_role("textbox", name="Please set category").click()
+                await page.get_by_role("menuitem", name="Fashion right").locator("div").first.click()
+                await page.get_by_role("menuitem", name="Men Bags right", exact=True).locator("div").nth(1).click()
+                await page.get_by_role("menuitem", name="Men's Sling Bag").locator("div").nth(1).click()
+                await page.get_by_role("button", name="OK").click()
+    
+                await page.locator('[id="form-item-basicInfo.descriptionEn"]').get_by_role("textbox").fill(
+                    "Testing automation description EN"
+                )
+                await page.locator('[id="form-item-basicInfo.descriptionTh"]').get_by_role("textbox").fill(
+                    "Testing automation description TH"
+                )
+    
+                await page.locator("#rc_select_1").click()
+                await page.get_by_title("Aisikadan (อซิกาเด้น)").click()
+    
+                await page.locator('input[name="saleInfo.price"]').fill("230")
+                await page.locator("#stock").fill("33")
+    
+                await page.locator("#rc_select_2").click()
+                await page.get_by_text("Phuong Nguyen").click()
+    
+                await page.locator('input[name="shippingInfo.weight"]').fill("12")
+                await page.get_by_role("spinbutton", name="W (Integer)").fill("2")
+                await page.get_by_role("spinbutton", name="L (Integer)").fill("22")
+                await page.get_by_role("spinbutton", name="H (Integer)").fill("2")
+    
+                await page.get_by_role("button", name="Submit").click()
+    
+&gt;               await page.wait_for_url("**/portal/product/list?status=all", timeout=20000)
+
+tests\P\test_create_product.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+venv\Lib\site-packages\playwright\async_api\_generated.py:9133: in wait_for_url
+    await self._impl_obj.wait_for_url(
+venv\Lib\site-packages\playwright\_impl\_page.py:584: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+venv\Lib\site-packages\playwright\_impl\_frame.py:263: in wait_for_url
+    async with self.expect_navigation(
+venv\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def continuation() -&gt; Optional[Response]:
+&gt;       event = await waiter.result()
+                ^^^^^^^^^^^^^^^^^^^^^
+E       playwright._impl._errors.TimeoutError: Timeout 20000ms exceeded.
+E       =========================== logs ===========================
+E       waiting for navigation to "**/portal/product/list?status=all" until 'load'
+E       ============================================================
+
+venv\Lib\site-packages\playwright\_impl\_frame.py:239: TimeoutError</failure></testcase></testsuite></testsuites>

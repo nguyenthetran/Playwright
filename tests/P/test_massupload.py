@@ -9,7 +9,7 @@ HEADLESS = False
 SLOW_MO = 0  # ms (tăng nếu muốn xem chậm)
 VIDEO_DIR = Path("videos")          # thư mục lưu video
 VIDEO_SIZE = {"width": 1280, "height": 720}  # kích thước video
-UPLOAD_FILE = Path(r"massupload_basic_product_template (17).xlsx")  # đổi sang đường dẫn thật nếu cần
+UPLOAD_FILE = Path(__file__).parent / "massupload_basic_product_template (17).xlsx"  # đổi sang đường dẫn thật nếu cần
 
 async def main():
     # Đảm bảo thư mục video tồn tại
