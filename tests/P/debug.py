@@ -8,7 +8,7 @@ with sync_playwright() as p:
 
     print("🧭 Navigating to sign-in page")
     page = context.new_page()
-    page.goto("https://predev-seller-center.amaze-x.com/auth/sign-in")
+    page.goto("https://uat-seller-center.amaze-x.com/auth/sign-in")
     page.get_by_text("TH", exact=True).click()
     page.get_by_text("EN", exact=True).click()
     page.get_by_role("textbox", name="Email/Phone Number/Username").click()

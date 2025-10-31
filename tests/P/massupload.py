@@ -21,7 +21,7 @@ async def main():
         # record_video được bật ở mức context => mỗi page sẽ có 1 file .webm
         context = await browser.new_context(
             record_video_dir=str(VIDEO_DIR),
-            record_video_size=VIDEO_SIZE,
+            record_video_size=VIDEO_SIZE, # type: ignore
             viewport={"width": 1366, "height": 768},
         )
 
@@ -29,11 +29,11 @@ async def main():
 
         try:
             # === LOGIN ===
-            await page.goto("https://predev-seller-center.amaze-x.com/auth/sign-in")
+            await page.goto("https://uat-seller-center.amaze-x.com/auth/sign-in")
             await page.locator("span").filter(has_text="ThaiLanTH").click()
             await page.get_by_text("United StatesEN").click()
-            await page.get_by_role("textbox", name="Email/Phone Number/Username").fill("Adgjl123")
-            await page.get_by_role("textbox", name="Password").fill("Adgjl123")
+            await page.get_by_role("textbox", name="Email/Phone Number/Username").fill("Accountuat44")
+            await page.get_by_role("textbox", name="Password").fill("xlNuHa031f0BIQL")
             await page.get_by_role("button", name="Sign In").click()
             await page.wait_for_load_state("networkidle")
 

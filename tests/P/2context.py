@@ -3,7 +3,7 @@ import asyncio
 from playwright.async_api import async_playwright, TimeoutError as PWTimeout
 
 DATA = [
-    {"username": "Phuongtest123",  "password": "oTSDDMsdl3A1eKv"},
+    {"username": "Accountuat44",  "password": "xlNuHa031f0BIQL"},
     {"username": "Phuongtest1234", "password": "oTSDDMsdl3A1eKv."},  # user sai để thấy toast lỗi
 ]
 
@@ -41,7 +41,7 @@ async def get_ui_message(page, timeout: int = 3000) -> str:
 async def perform_flow(page, data):
     print(">>> Truy cập trang đăng nhập")
     try:
-        await page.goto("https://predev-seller-center.amaze-x.com/auth/sign-in")
+        await page.goto("https://uat-seller-center.amaze-x.com/auth/sign-in")
         # đổi ngôn ngữ nếu muốn:
         await page.get_by_text("TH", exact=True).click()
         await page.get_by_text("EN", exact=True).click()
