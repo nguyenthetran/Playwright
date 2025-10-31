@@ -37,17 +37,11 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install pytest pytest-html requests
           
-      - name: Run API Tests
+      - name: Run Pytest and Generate JUnit XML
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: |
-          pytest tests/API_tests --junitxml=pytest-results-api.xml --html=pytest-report-api.html --self-contained-html
-
-      - name: Run P Tests
-        env:
-          PYTHONPATH: ${{ github.workspace }}
-        run: |
-          pytest tests/P --junitxml=pytest-results-p.xml --html=pytest-report-p.html --self-contained-html
+          pytest tests/API_tests tests/P --junitxml=pytest-results.xml --html=pytest-report.html --self-contained-html
 
       - name: Publish Test Results to GitHub UI
         # 'if: always()' đảm bảo báo cáo được tạo dù test có lỗi
